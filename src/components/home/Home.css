@@ -1,0 +1,134 @@
+/* Home.css */
+
+/* Container for the entire home page */
+.home-container {
+  font-family: 'Arial, sans-serif';
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero section styling */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+  transition: background 1s ease;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay to reduce brightness */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+  z-index: 1; /* Set higher than the video but lower than the content */
+}
+
+.hero-content {
+  position: relative; /* Ensure relative positioning for content */
+  z-index: 2; /* Adjust z-index to ensure content is above overlay */
+}
+
+.home-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  animation: fadeIn 2s ease;
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 3s ease;
+}
+
+.scroll-link {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #e94560;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.scroll-link:hover {
+  background: #c73350;
+}
+
+.about-section,
+.projects-section {
+  padding: 50px 20px;
+  background: #1a1a1d;
+  transition: background 1s ease, transform 1s ease;
+  text-align: center; /* Center text content */
+}
+
+.projects-section {
+  background: #2a2a2d;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  background: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: calc(33.33% - 40px);
+  max-width: 300px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

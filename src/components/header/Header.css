@@ -1,0 +1,97 @@
+/* Header.css */
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1a1a1d; /* Dark background for navbar */
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    transition: background 0.5s ease; /* Smooth background transition */
+  }
+  
+  .logo {
+    font-size: 1.5rem; /* Larger font size for logo */
+    color: #e94560; /* Bright color for logo text */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo:hover {
+    color: #fff; /* Change logo color on hover */
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between nav links */
+  }
+  
+  .nav-link {
+    color: #fff; /* White text color for links */
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .nav-link:hover {
+    color: #e94560; /* Change link color on hover */
+  }
+  
+  .project-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-button {
+    background: none;
+    border: none;
+    color: #fff; /* White text color for dropdown button */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .dropdown-button:hover {
+    color: #e94560; /* Change button color on hover */
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1d; /* Dark background for dropdown */
+    min-width: 160px; /* Minimum width for dropdown items */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+    z-index: 1; /* Ensure dropdown appears above other elements */
+    transition: transform 0.3s ease; /* Smooth dropdown transition */
+    transform: scaleY(0); /* Start with a scale of 0 */
+    transform-origin: top; /* Transition from the top */
+  }
+  
+  .project-dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content on hover */
+    transform: scaleY(1); /* Scale to full size */
+  }
+  
+  .dropdown-item {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease; /* Smooth background-color transition */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #575757; /* Change background color on hover */
+  }
+  
+  .footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa; /* Light grey color for footer text */
+  }
+  
