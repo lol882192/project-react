@@ -8,10 +8,10 @@ import 'swiper/css/navigation';
 
 import './Hero.css';
 
-// Import SVG images
 import prevIcon from './caret-back-outline.svg';
 import nextIcon from './caret-forward-outline.svg';
-const Hero = ({ projects }) => {
+
+const Hero = ({ projects, onProjectChange }) => {
   return (
     <div className="container">
       <h1 className="heading">Project Gallery</h1>
@@ -31,6 +31,12 @@ const Hero = ({ projects }) => {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
           clickable: true,
+        }}
+        onSlideChange={(swiper) => {
+          const index = swiper.realIndex;
+          if (onProjectChange) {
+            onProjectChange(projects[index]);
+          }
         }}
         modules={[EffectCoverflow, Navigation]}
         className="swiper_container"

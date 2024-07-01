@@ -1,0 +1,37 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Increase padding for more height */
+    background: #1a1a1d; /* Dark background for footer */
+    color: #fff;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    transition: background 0.5s ease; /* Smooth background transition */
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Increase space between footer links */
+  }
+  
+  .footer-link {
+    color: #fff; /* White text color for links */
+    text-decoration: none;
+    font-size: 1.5rem; /* Increase font size for larger icons */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .footer-link:hover {
+    color: #e94560; /* Change link color on hover */
+  }
+  
+  .footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa; /* Light grey color for footer text */
+  }
+  

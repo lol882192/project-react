@@ -6,10 +6,13 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import ProjectDetails from './components/ProjectDetails'; // Import the ProjectDetails component
+import ReactDOM from 'react-dom/client';
+
 
 // Importing a spinner library (example: react-spinners)
 import { css } from '@emotion/react';
 import ClipLoader from 'react-spinners/ClipLoader';
+
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -46,12 +49,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home projects={projects} />} />
-            <Route path="project/:projectID" element={<ProjectDetails />} />
-            {/* Add more routes as needed */}
+            <Route path="/projects" element={<ProjectDetails />} />
           </Route>
         </Routes>
       )}
-    </div>
+    </div>  
   );
 }
 

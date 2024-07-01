@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import { Link, Element } from 'react-scroll';
 import Hero from '../hero/Hero'; // Import the Hero component
+import { TypeAnimation } from 'react-type-animation';
 
 const Home = ({ projects }) => {
   // Sample Latin filler text for the About Me section
@@ -20,7 +21,19 @@ const Home = ({ projects }) => {
         </video>
 
         <div className="hero-content">
-          <h1 className="home-title">Welcome to My Portfolio</h1>
+        <TypeAnimation
+        sequence={[
+          // Same substring at the start will only be typed out once, initially
+          'Howdy! I am Eshwaran Krishnan.',
+          3000,
+          'Welcome to my website!',
+          3000
+        ]}
+          wrapper="span"
+          speed={50}
+          style={{ fontSize: '2em', display: 'inline-block' }}
+          repeat={Infinity}
+        />
           <p className="home-subtitle">Explore my projects and learn more about my journey.</p>
           {/* Scroll Link to About Section */}
           <Link

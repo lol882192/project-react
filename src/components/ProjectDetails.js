@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import api from "../api/axiosConfig";
+import Hero from './hero/Hero'; // Import the Hero component
 
 const ProjectDetails = () => {
-  const { projectID } = useParams();
-  const [projectData, setProjectData] = useState(null);
+  const [projects, setProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchProjectData = async () => {
+    const fetchProjects = async () => {
       try {
-        const response = await api.get(`/api/v1/projects/${projectID}`); // Update API endpoint
-        setProjectData(response.data);
+        const response = await api.get(`/api/v1/projects`); // Fetch all projects
+        setProjects(response.data);
+        setSelectedProject(response.data[0]); // Set the first project as the initial selected project
       } catch (err) {
         setError("Error fetching project data");
       } finally {
@@ -20,20 +21,26 @@ const ProjectDetails = () => {
       }
     };
 
-    fetchProjectData();
-  }, [projectID]);
+    fetchProjects();
+  }, []);
+
+  const handleProjectChange = (project) => {
+    setSelectedProject(project);
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
-  if (!projectData) return <div>No project data found</div>;
+  if (!selectedProject) return <div>No project data found</div>;
 
   return (
     <div>
-      <h1>{projectData.projectTitle}</h1>
-      <p>Project ID: {projectData.id.date}</p>
-      <p>Website Name: {projectData.websiteName}</p>
-      <p>Project Web Link: <a href={projectData.projectWebLink}>{projectData.projectWebLink}</a></p>
-      <img src={projectData.imageLink} alt="Project" style={{ maxWidth: '100%', height: 'auto' }} />
+      <Hero projects={projects} onProjectChange={handleProjectChange} /> {/* Pass the handler to Hero */}
+      <h1>{selectedProject.projectTitle}</h1>
+      <p>Project ID: {selectedProject.id.date}</p>
+      <p>Website Name: {selectedProject.websiteName}</p>
+      <p>Project Web Link: <a href={selectedProject.projectWebLink}>{selectedProject.projectWebLink}</a></p>
+      <img src={selectedProject.imageLink} alt="Project" style={{ maxWidth: '100%', height: 'auto' }} />
+      <p>Description: {selectedProject.description}</p> {/* Add project description */}
       {/* You can add more information as needed */}
     </div>
   );

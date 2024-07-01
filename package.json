@@ -1,5 +1,5 @@
 {
-  "homepage": "https://eshwaran-krishnan.live/",
+  "homepage": "https://eshwaran-krishnan.live",
   "name": "my-portfolio-app",
   "version": "0.1.0",
   "private": true,
@@ -24,10 +24,13 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
     "react-spinners": "^0.13.8",
+    "react-type-animation": "^3.2.0",
     "swiper": "^11.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
